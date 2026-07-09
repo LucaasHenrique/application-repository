@@ -41,6 +41,7 @@ jobs:
           uses: webfactory/ssh-agent@v0.10.0
           with:
             ssh-private-key: ${{ secrets.INSTANCE_SECRET_KEY }}
+
         - name: Deploy to EC2
           run: |
             ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.INSTANCE_IP }} << EOF
